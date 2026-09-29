@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Space+Grotesk:wght@400;500&display=swap');
+
+:root {
+  --background: #f3f2ee;
+  --foreground: #111110;
+  --logo-size: min(200px, 52vw);
+}
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.splash-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.logo-lockup {
+  width: var(--logo-size);
+  display: grid;
+  gap: 0.7rem;
+  justify-items: stretch;
+}
+
+.reassembly-mark {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: currentColor;
+}
+
+.logo-name {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(0.55rem, 1.6vw, 0.72rem);
+  letter-spacing: 0.28em;
+  line-height: 1;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-lockup { animation: arrive 700ms cubic-bezier(.2,.8,.2,1) both; }
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 360px) {
+  .splash-page { padding: 1.5rem; }
+}
